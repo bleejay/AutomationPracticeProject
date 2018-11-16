@@ -13,17 +13,15 @@ public class SeleniumProperties {
         Properties seleniumProperties = new Properties();
 
         try {
-            seleniumProperties.load(new FileReader("C:\\Users\\TECH-W112\\IdeaProjects\\AutomationPracticeProject\\src\\test\\java\\AutomationPracticeProject\\Selenium_Config\\selenium.properties"));
+            seleniumProperties.load(new FileReader("C:\\Users\\TECH-W92\\Engineering19\\AutomationPracticeProject\\src\\test\\java\\AutomationPracticeProject\\Selenium_Config\\selenium_driver.properties"));
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         chromeDriverPath = seleniumProperties.getProperty("chrome_driver_path");
         geckoDriverPath = seleniumProperties.getProperty("gecko_driver_path");
         waitTime = seleniumProperties.getProperty("implicit_wait_time");
-
-
-
     }
 
     public String getChromeDriverPath() {

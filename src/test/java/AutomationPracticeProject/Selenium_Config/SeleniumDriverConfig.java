@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class SeleniumDriverConfig {
 
-    public WebDriver driver;
+    private WebDriver driver;
     private SeleniumProperties seleniumProperties = new SeleniumProperties();
 
     public SeleniumDriverConfig(String browser){

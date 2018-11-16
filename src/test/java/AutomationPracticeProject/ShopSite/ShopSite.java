@@ -8,10 +8,15 @@ import org.openqa.selenium.WebDriver;
 public class ShopSite {
 
     private WebDriver driver;
-    ShopHomePage shopHomePage;
-    ShopSignInPage shopSignInPage;
+    private ShopHomePage shopHomePage;
+    private ShopSignInPage shopSignInPage;
 
 
+    public ShopSite(WebDriver driver) {
+        this.driver = driver;
+        shopHomePage = new ShopHomePage(driver);
+        shopSignInPage = new ShopSignInPage(driver);
+    }
 
     public String getCurrentUrl(){
         return driver.getCurrentUrl();
@@ -21,17 +26,12 @@ public class ShopSite {
         driver.quit();
     }
 
-
-    public ShopSite(WebDriver driver) {
-        this.driver = driver;
-    }
-
     public ShopHomePage shopHomePage(){
-        return new ShopHomePage( driver );
+        return shopHomePage;
     }
 
     public ShopSignInPage shopSignInPage(){
-        return new ShopSignInPage(driver);
+        return shopSignInPage;
     }
 
 }
