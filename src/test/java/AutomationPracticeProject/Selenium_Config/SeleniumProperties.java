@@ -8,12 +8,13 @@ public class SeleniumProperties {
     private String chromeDriverPath;
     private String geckoDriverPath;
     private String waitTime;
+    private String user_name;
     public SeleniumProperties(){
 
         Properties seleniumProperties = new Properties();
 
         try {
-            seleniumProperties.load(new FileReader("C:\\Users\\TECH-W112\\IdeaProjects\\AutomationPracticeProject\\src\\test\\java\\AutomationPracticeProject\\Selenium_Config\\selenium.properties"));
+            seleniumProperties.load(new FileReader("C:\\Users\\"+ user_name + "\\IdeaProjects\\AutomationPracticeProject\\src\\test\\java\\AutomationPracticeProject\\Selenium_Config\\selenium.properties"));
 
         } catch (IOException e) {
             e.printStackTrace();
