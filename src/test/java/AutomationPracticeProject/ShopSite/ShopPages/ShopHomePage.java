@@ -12,7 +12,8 @@ public class ShopHomePage {
     private By quickViewLink = By.xpath("//*[@id=\"homefeatured\"]/li[1]/div/div[1]/div/a[2]");
     private By qvAddToBasketLink = By.xpath("//*[@id=\"add_to_cart\"]/button");
     private By productPageLink = By.xpath("//*[@id=\"homefeatured\"]/li[1]/div/div[2]/div[2]/a[2]");
-    private By categoryLink = By.xpath("");
+    private By toCheckoutLink = By.xpath("//*[@id=\"button_order_cart\"]/span");
+    private By toCheckoutFromAddLink = By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a/span");
 
 
     public ShopHomePage(WebDriver driver){
@@ -43,11 +44,11 @@ public class ShopHomePage {
         driver.findElement(productPageLink).click();
     }
 
-    public void goToCategory(){
-//        driver.findElement().click();
+    public void toCheckout(){
+        driver.findElement(toCheckoutLink).click();
     }
 
-    public void searchBar(){
-
+    public void toCheckoutFromAdd(){
+        driver.findElement(toCheckoutFromAddLink).click();
     }
 }
