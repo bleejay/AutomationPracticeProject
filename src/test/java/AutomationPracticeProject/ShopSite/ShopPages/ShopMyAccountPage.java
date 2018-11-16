@@ -24,7 +24,7 @@ public class ShopMyAccountPage {
     public String getMyAccountPageUrl() {
         return myAccountPageUrl;
     }
-    public void goTomyAccountPage(){
+    public void goToMyAccountPage(){
         driver.navigate().to(myAccountPageUrl);
     }
     public void inputSearch(String product){
