@@ -32,7 +32,7 @@ public class SeleniumProperties {
         return geckoDriverPath;
     }
 
-    public String getWaitTime() {
-        return waitTime;
+    public long getWaitTime() {
+        return Long.parseLong(waitTime);
     }
 }
