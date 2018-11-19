@@ -9,7 +9,7 @@ public class ShopHomePage {
     private WebDriver driver;
     private Actions actions;
 
-    private String HomePageURL = "http://automationpractice.com/index.php";
+    private String homePageURL = "http://automationpractice.com/index.php";
     private By signInLink = By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a");
     private By addToBasketLink = By.xpath("//*[@id=\"homefeatured\"]/li[1]/div/div[2]/div[2]/a[1]/span");
 //    private By quickViewLink = By.xpath("//*[@id=\"homefeatured\"]/li[1]/div/div[1]/div/a[2]");
@@ -31,7 +31,7 @@ public class ShopHomePage {
     }
 
     public void goToHomePage(){
-        driver.navigate().to(HomePageURL);
+        driver.navigate().to(homePageURL);
     }
 
     public void clickSignInLink(){
@@ -84,5 +84,8 @@ public class ShopHomePage {
     public String getCartPrice(){
         actions.moveToElement(driver.findElement(cartHoverPath)).perform();
         return driver.findElement(cartItemPrice).getText();
+    }
+    public String getHomePageURL(){
+        return homePageURL;
     }
 }
