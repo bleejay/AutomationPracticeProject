@@ -3,4 +3,4 @@
 AutomationPracticeProject.iml
 target
 /src/test/java/AutomationPracticeProject/Selenium_Config/selenium.properties
-/src/test/java/AutomationPracticeProject/Selenium_Config/seleniumdriver.properties
+/src/reports/
