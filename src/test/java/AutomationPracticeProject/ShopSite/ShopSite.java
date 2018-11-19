@@ -70,4 +70,5 @@ public class ShopSite {
         shopOrderConfirmationPage.goToOrderHistory();
 
     }
+
 }
