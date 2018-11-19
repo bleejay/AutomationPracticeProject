@@ -5,3 +5,5 @@ target
 /src/test/java/AutomationPracticeProject/Selenium_Config/selenium.properties
 /src/reports/
 /src/test/java/AutomationPracticeProject/AppTest.java
+/src/test/java/AutomationPracticeProject/Selenium_Config/selenium_driver.properties
+/src/test/java/AutomationPracticeProject/CukesJunitRunner.java

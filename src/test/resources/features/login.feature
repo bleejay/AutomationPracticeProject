@@ -11,11 +11,11 @@ Feature: User login
     Then I receive the corresponding error <error>
 
     Examples:
-      |emailaddress | password  |             error               |
-      |             |           |  An email address required.     |
-      |dsfasag@gmail.com|       |   Password is required.         |
-      ||agdfadsfa| An email address required.                     |
-      |fasfdg@gmail.com| 1234567834234323 |Authentication failed. |
+      |   emailaddress  |     password     |             error               |
+      |                 |                  |    An email address required.   |
+      |dsfasag@gmail.com|                  |       Password is required.     |
+      |                 |     agdfadsfa    |    An email address required.   |
+      |fasfdg@gmail.com | 1234567834234323 |      Authentication failed.     |
 
   @test
   Scenario Outline: If i input correct username and password details i will be signed in
@@ -23,8 +23,9 @@ Feature: User login
     When I input a valid email address <emailaddress>
     And I input a valid password <password>
     Then I am taken to the correct page
+
     Examples:
-      | emailaddress | password |
+      | emailaddress        | password    |
       |samgrill101@gmail.com|engineering19|
 
 

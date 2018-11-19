@@ -6,9 +6,9 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         format = {"pretty", "html:src/reports"},
-        features = {"C:\\Users\\TECH-W112\\IdeaProjects\\AutomationPracticeProject\\src\\test\\resources\\features\\login.feature"},
+        features = {"C:\\Users\\TECH-W91\\engineering18\\AutomationPracticeProject\\src\\test\\Resources\\Features\\myAccount.feature"},
         glue = {"Step_Defs"},
-          tags={"@test"}
+          tags={"@MyAccountTest"}
 )
 
 public class CukesJunitRunner {
