@@ -9,14 +9,14 @@ public class SeleniumProperties {
     private String geckoDriverPath;
 
     private Long implicitWaitTime;
-    private String user_name;
-  
+    private String user_name = System.getProperty("user.name");
+
     public SeleniumProperties(){
 
         Properties seleniumProperties = new Properties();
 
         try {
-            seleniumProperties.load(new FileReader("C:\\Users\\"+ user_name + "\\IdeaProjects\\AutomationPracticeProject\\src\\test\\java\\AutomationPracticeProject\\Selenium_Config\\selenium.properties"));
+            seleniumProperties.load(new FileReader("C:\\Users\\"+ user_name + "\\IdeaProjects\\AutomationPracticeProject\\src\\test\\java\\AutomationPracticeProject\\Selenium_Config\\selenium_driver.properties"));
 
         } catch (IOException e) {
             e.printStackTrace();
