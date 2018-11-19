@@ -1,16 +1,19 @@
 package AutomationPracticeProject.ShopSite;
 
-import AutomationPracticeProject.ShopSite.ShopPages.ShopHomePage;
-import AutomationPracticeProject.ShopSite.ShopPages.ShopSignInPage;
+import AutomationPracticeProject.ShopSite.ShopPages.*;
 
 import org.openqa.selenium.WebDriver;
 
 public class ShopSite {
 
     private WebDriver driver;
-    private ShopHomePage shopHomePage;
-    private ShopSignInPage shopSignInPage;
-
+    ShopHomePage shopHomePage;
+    ShopSignInPage shopSignInPage;
+    ShopAddressConfirmationPage shopAddressConfirmationPage;
+    ShopShippingConfirmationPage shopShippingConfirmationPage;
+    ShopPaymentSelectionPage shopPaymentSelectionPage;
+    ShopBankWireTransferConfirmation shopBankWireTransferConfirmation;
+    ShopChequePaymentConfirmationPage shopChequePaymentConfirmationPage;
 
     public ShopSite(WebDriver driver) {
         this.driver = driver;

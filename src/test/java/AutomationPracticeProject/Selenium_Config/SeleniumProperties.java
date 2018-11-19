@@ -7,13 +7,17 @@ import java.util.Properties;
 public class SeleniumProperties {
     private String chromeDriverPath;
     private String geckoDriverPath;
-    private String waitTime;
+
+    private Long implicitWaitTime;
+    private String user_name;
+  
     public SeleniumProperties(){
 
         Properties seleniumProperties = new Properties();
 
         try {
-            seleniumProperties.load(new FileReader("C:\\Users\\TECH-W92\\Engineering19\\AutomationPracticeProject\\src\\test\\java\\AutomationPracticeProject\\Selenium_Config\\selenium_driver.properties"));
+
+            seleniumProperties.load(new FileReader("C:\\Users\\"+ user_name + "\\IdeaProjects\\AutomationPracticeProject\\src\\test\\java\\AutomationPracticeProject\\Selenium_Config\\selenium.properties"));
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -21,7 +25,7 @@ public class SeleniumProperties {
 
         chromeDriverPath = seleniumProperties.getProperty("chrome_driver_path");
         geckoDriverPath = seleniumProperties.getProperty("gecko_driver_path");
-        waitTime = seleniumProperties.getProperty("implicit_wait_time");
+        implicitWaitTime = Long.parseLong(seleniumProperties.getProperty("implicit_wait_time"));
     }
 
     public String getChromeDriverPath() {
@@ -32,7 +36,7 @@ public class SeleniumProperties {
         return geckoDriverPath;
     }
 
-    public long getWaitTime() {
-        return Long.parseLong(waitTime);
+    public Long getImplicitWaitTime() {
+        return implicitWaitTime;
     }
 }
