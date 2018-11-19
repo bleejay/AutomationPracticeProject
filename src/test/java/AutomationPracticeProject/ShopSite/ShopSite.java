@@ -16,11 +16,13 @@ public class ShopSite {
     ShopPaymentSelectionPage shopPaymentSelectionPage;
     ShopBankWireTransferConfirmation shopBankWireTransferConfirmation;
     ShopChequePaymentConfirmationPage shopChequePaymentConfirmationPage;
+    ShopMyAccountPage shopMyAccountPage;
 
     public ShopSite(WebDriver driver) {
         this.driver = driver;
         shopHomePage = new ShopHomePage(driver);
         shopSignInPage = new ShopSignInPage(driver);
+        shopMyAccountPage = new ShopMyAccountPage(driver);
     }
 
     public String getCurrentUrl(){
@@ -40,5 +42,7 @@ public class ShopSite {
     }
 
     public ShopOrderHistoryPage shopOrderHistoryPage(){return new ShopOrderHistoryPage(driver);}
-
+    public ShopMyAccountPage shopMyAccountPage() {
+        return shopMyAccountPage;
+    }
 }
