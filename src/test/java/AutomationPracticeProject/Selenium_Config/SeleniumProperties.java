@@ -21,10 +21,10 @@ public class SeleniumProperties {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         chromeDriverPath = seleniumProperties.getProperty("chrome_driver_path");
         geckoDriverPath = seleniumProperties.getProperty("gecko_driver_path");
         implicitWaitTime = Long.parseLong(seleniumProperties.getProperty("implicit_wait_time"));
-
     }
 
     public String getChromeDriverPath() {
