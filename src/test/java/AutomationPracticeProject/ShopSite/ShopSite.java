@@ -1,5 +1,6 @@
 package AutomationPracticeProject.ShopSite;
 
+
 import AutomationPracticeProject.ShopSite.ShopPages.*;
 
 import org.openqa.selenium.WebDriver;
@@ -9,6 +10,7 @@ public class ShopSite {
     private WebDriver driver;
     ShopHomePage shopHomePage;
     ShopSignInPage shopSignInPage;
+    ShopOrderHistoryPage orderHistoryPage;
     ShopAddressConfirmationPage shopAddressConfirmationPage;
     ShopShippingConfirmationPage shopShippingConfirmationPage;
     ShopPaymentSelectionPage shopPaymentSelectionPage;
@@ -36,5 +38,7 @@ public class ShopSite {
     public ShopSignInPage shopSignInPage(){
         return shopSignInPage;
     }
+
+    public ShopOrderHistoryPage shopOrderHistoryPage(){return new ShopOrderHistoryPage(driver);}
 
 }
