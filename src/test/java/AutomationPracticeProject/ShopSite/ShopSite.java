@@ -21,6 +21,9 @@ public class ShopSite {
     ShopChequePaymentConfirmationPage shopChequePaymentConfirmationPage;
     ShoppingCartPage shoppingCartPage;
     ShopOrderConfirmationPage shopOrderConfirmationPage;
+    private Double orderPrice;
+    private Double cartTotal;
+    private Double paymentSelectionTotal;
 
     public ShopSite(WebDriver driver) {
         this.driver = driver;
@@ -58,6 +61,7 @@ public class ShopSite {
         shopHomePage.goToHomePage();
         shopHomePage.clickAddToBasket();
         shopHomePage.toCheckoutFromAdd();
+        cartTotal = shoppingCartPage.getTotalBasketQuantity();
         shoppingCartPage.clickProceedToCheckoutButton();
         shopSignInPage.inputUserName("samgrill101@gmail.com");
         shopSignInPage.inputPassword("engineering19");
@@ -65,10 +69,20 @@ public class ShopSite {
         shopAddressConfirmationPage.processAddress();
         shopShippingConfirmationPage.tickAcceptTermsBox();
         shopShippingConfirmationPage.processShipping();
+        paymentSelectionTotal = shopPaymentSelectionPage.totalPrice();
         shopPaymentSelectionPage.payByCard();
-        System.out.println(shopBankWireTransferConfirmation.getTotalAmountOfOrder());
+        orderPrice = shopBankWireTransferConfirmation.getTotalAmountOfOrder();
         shopBankWireTransferConfirmation.processPayment();
         shopOrderConfirmationPage.goToOrderHistory();
 
+    }
+    public Double getOrderPrice(){
+        return orderPrice;
+    }
+    public Double getCartTotal(){
+        return cartTotal;
+    }
+    public Double getPaymentSelectionTotal(){
+        return paymentSelectionTotal;
     }
 }

@@ -6,13 +6,10 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         format = {"pretty", "html:src/reports"},
-        features = {"C:\\Users\\TECH-W112\\IdeaProjects\\AutomationPracticeProject\\src\\test\\resources\\features\\login.feature"},
+        features = {"C:\\Users\\TECH-W84.LAPTOP-FCCNLJDE\\IdeaProjects\\AutomationPracticeProject\\src\\test\\resources\\features\\orderhistory.feature"},
         glue = {"Step_Defs"},
-          tags={"@test"}
+          tags={"@OrderHistoryTest"}
 )
 
 public class CukesJunitRunner {
-
-
-
 }

@@ -22,6 +22,10 @@ public class ShopBankWireTransferConfirmation {
     public void processPayment(){driver.findElement(confirmOrderButton).click();}
 
     public void goToPaymentSelectionPage(){driver.findElement(selectAlternatePaymentMethod).click();}
-    public String getTotalAmountOfOrder(){return driver.findElement(totalPriceID).getText();}
+    public Double getTotalAmountOfOrder(){
+       String price = driver.findElement(totalPriceID).getText();
+        Double totalPrice = Double.parseDouble(price.replace ("$",""));
+        return totalPrice;
+    }
 
 }
