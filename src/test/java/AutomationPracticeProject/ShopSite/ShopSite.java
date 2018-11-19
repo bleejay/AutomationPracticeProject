@@ -5,15 +5,12 @@ import AutomationPracticeProject.ShopSite.ShopPages.*;
 
 import org.openqa.selenium.WebDriver;
 
-import java.sql.Time;
-import java.util.concurrent.TimeUnit;
-
 public class ShopSite {
 
     private WebDriver driver;
     ShopHomePage shopHomePage;
     ShopSignInPage shopSignInPage;
-    ShopOrderHistoryPage orderHistoryPage;
+    ShopOrderHistoryPage shopOrderHistoryPage;
     ShopAddressConfirmationPage shopAddressConfirmationPage;
     ShopShippingConfirmationPage shopShippingConfirmationPage;
     ShopPaymentSelectionPage shopPaymentSelectionPage;
@@ -44,15 +41,17 @@ public class ShopSite {
         driver.quit();
     }
 
-    public ShopHomePage shopHomePage(){
-        return shopHomePage;
-    }
-
-    public ShopSignInPage shopSignInPage(){
-        return shopSignInPage;
-    }
-
-    public ShopOrderHistoryPage shopOrderHistoryPage(){return new ShopOrderHistoryPage(driver);}
+    // Page Accessors
+    public ShopHomePage shopHomePage() { return shopHomePage; }
+    public ShopSignInPage shopSignInPage() { return shopSignInPage; }
+    public ShopOrderHistoryPage shopOrderHistoryPage() { return shopOrderHistoryPage; }
+    public ShopAddressConfirmationPage shopAddressConfirmationPage() { return shopAddressConfirmationPage; }
+    public ShopShippingConfirmationPage shopShippingConfirmationPage() { return shopShippingConfirmationPage; }
+    public ShopPaymentSelectionPage shopPaymentSelectionPage() { return shopPaymentSelectionPage; }
+    public ShopBankWireTransferConfirmation shopBankWireTransferConfirmation() { return shopBankWireTransferConfirmation; }
+    public ShopChequePaymentConfirmationPage shopChequePaymentConfirmationPage() { return shopChequePaymentConfirmationPage; }
+    public ShoppingCartPage shoppingCartPage() { return shoppingCartPage; }
+    public ShopOrderConfirmationPage shopOrderConfirmationPage() { return shopOrderConfirmationPage; }
 
     public void placeOrder() {
         shopHomePage.goToHomePage();
