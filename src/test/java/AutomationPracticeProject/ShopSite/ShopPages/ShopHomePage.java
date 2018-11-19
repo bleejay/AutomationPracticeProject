@@ -21,7 +21,9 @@ public class ShopHomePage {
     private By cartItem = By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/div/div/div/dl/dt/div/div[1]/a");
     private By continueShoppingLink = By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/span/span");
 //    private By quickViewWrapper = By.xpath("//*[@id=\"product\"]/div/div/div[1]");
-
+    private By itemPrice = By.xpath("//*[@id=\"homefeatured\"]/li[1]/div/div[2]/div[1]/span");
+    private By cartItemPrice = By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/div/div/div/dl/dt/div/span");
+    private By cartHoverPath = By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a");
 
     public ShopHomePage(WebDriver driver){
         this.driver = driver;
@@ -58,7 +60,7 @@ public class ShopHomePage {
     }
 
     public void toCheckout(){
-        actions.moveToElement(driver.findElement(By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a"))).perform();
+        actions.moveToElement(driver.findElement(cartHoverPath)).perform();
         driver.findElement(toCheckoutLink).click();
     }
 
@@ -67,11 +69,20 @@ public class ShopHomePage {
     }
 
     public String checkCartItem(){
-        actions.moveToElement(driver.findElement(By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a"))).perform();
+        actions.moveToElement(driver.findElement(cartHoverPath)).perform();
         return driver.findElement(cartItem).getText();
     }
 
     public void continueShopping(){
         driver.findElement(continueShoppingLink).click();
+    }
+
+    public String getPrice(){
+        return driver.findElement(itemPrice).getText();
+    }
+
+    public String getCartPrice(){
+        actions.moveToElement(driver.findElement(cartHoverPath)).perform();
+        return driver.findElement(cartItemPrice).getText();
     }
 }

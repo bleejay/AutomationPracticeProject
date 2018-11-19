@@ -20,7 +20,7 @@ public class ShopOrderConfirmationPage {
 
     public void goToOrderHistory(){driver.findElement(goToOrderHistoryButton).click();}
 
-    public String getTotalPrice({
+    public String getTotalPrice(){
         return driver.findElement(totalPriceClassName).getText();
     }
 }
