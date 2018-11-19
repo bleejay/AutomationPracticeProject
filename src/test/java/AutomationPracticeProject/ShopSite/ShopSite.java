@@ -44,6 +44,7 @@ public class ShopSite {
         driver.quit();
     }
 
+    //Page Accessors
     public ShopHomePage shopHomePage(){
         return shopHomePage;
     }
@@ -51,7 +52,9 @@ public class ShopSite {
     public ShopSignInPage shopSignInPage(){
         return shopSignInPage;
     }
-
+    public ShoppingCartPage shoppingCartPage(){
+        return shoppingCartPage;
+    }
     public ShopOrderHistoryPage shopOrderHistoryPage(){return new ShopOrderHistoryPage(driver);}
 
     public void placeOrder() {
@@ -71,4 +74,5 @@ public class ShopSite {
         shopOrderConfirmationPage.goToOrderHistory();
 
     }
+
 }
