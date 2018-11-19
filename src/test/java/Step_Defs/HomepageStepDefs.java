@@ -63,6 +63,7 @@ public class HomepageStepDefs {
     @Then("^That item is added to the cart$")
     public void that_item_is_added_to_the_cart() throws Throwable {
         Assert.assertNotNull(shopSite.shopHomePage().checkCartItem());
+        Assert.assertEquals(shopSite.shopHomePage().getPrice(), shopSite.shopHomePage().getCartPrice());
     }
 
     @Then("^I am taken to the Checkout$")
