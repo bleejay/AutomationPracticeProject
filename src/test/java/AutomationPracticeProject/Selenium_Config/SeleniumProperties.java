@@ -7,7 +7,6 @@ import java.util.Properties;
 public class SeleniumProperties {
     private String chromeDriverPath;
     private String geckoDriverPath;
-
     private Long implicitWaitTime;
     private String user_name = System.getProperty("user.name");
 
@@ -16,7 +15,7 @@ public class SeleniumProperties {
         Properties seleniumProperties = new Properties();
 
         try {
-            seleniumProperties.load(new FileReader("C:\\Users\\"+ user_name + "\\IdeaProjects\\AutomationPracticeProject\\src\\test\\java\\AutomationPracticeProject\\Selenium_Config\\selenium_driver.properties"));
+            seleniumProperties.load(new FileReader("C:\\Users\\"+ user_name + "\\IdeaProjects\\AutomationPracticeProject\\src\\test\\java\\AutomationPracticeProject\\Selenium_Config\\Selenium_driver.properties"));
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -9,7 +9,7 @@ public class ShoppingCartPage {
     private WebDriver driver;
 
     //Constructor
-    ShoppingCartPage(WebDriver driver){
+    public ShoppingCartPage(WebDriver driver){
         this.driver = driver;
     }
 
@@ -20,7 +20,7 @@ public class ShoppingCartPage {
     private String signInPageURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
 
     //Buttons
-    private By proceedToCheckoutButton = By.className("button btn btn-default standard-checkout button-medium");
+    private By proceedToCheckoutButton = By.className("standard-checkout");
     private By logoButton = By.className("logo img-responsive");
     private By signInButton = By.className("login");
     private By increaseQuantityOfFirstItemButton = By.id("cart_quantity_up_1_1_0_0");
