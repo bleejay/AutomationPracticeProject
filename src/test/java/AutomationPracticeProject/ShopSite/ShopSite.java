@@ -20,6 +20,7 @@ public class ShopSite {
     ShopBankWireTransferConfirmation shopBankWireTransferConfirmation;
     ShopChequePaymentConfirmationPage shopChequePaymentConfirmationPage;
     ShoppingCartPage shoppingCartPage;
+    ShopOrderConfirmationPage shopOrderConfirmationPage;
 
     public ShopSite(WebDriver driver) {
         this.driver = driver;
@@ -31,6 +32,7 @@ public class ShopSite {
         shopShippingConfirmationPage = new ShopShippingConfirmationPage(driver);
         shopPaymentSelectionPage = new ShopPaymentSelectionPage(driver);
         shopBankWireTransferConfirmation = new ShopBankWireTransferConfirmation(driver);
+        shopOrderConfirmationPage = new ShopOrderConfirmationPage(driver);
 
     }
 
@@ -66,7 +68,7 @@ public class ShopSite {
         shopPaymentSelectionPage.payByCard();
         System.out.println(shopBankWireTransferConfirmation.getTotalAmountOfOrder());
         shopBankWireTransferConfirmation.processPayment();
-
+        shopOrderConfirmationPage.goToOrderHistory();
 
     }
 }
