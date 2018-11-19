@@ -15,6 +15,7 @@ public class SeleniumProperties {
         Properties seleniumProperties = new Properties();
 
         try {
+
             seleniumProperties.load(new FileReader("C:\\Users\\"+user_name+"\\engineering18\\AutomationPracticeProject\\src\\test\\java\\AutomationPracticeProject\\Selenium_Config\\selenium_driver.properties"));
 
         } catch (IOException e) {

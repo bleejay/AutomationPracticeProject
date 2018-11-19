@@ -10,10 +10,7 @@ import org.junit.Assert;
 import org.openqa.selenium.chrome.ChromeDriver;
 public class OrderHistoryDefs {
 
-    private ChromeDriver chromeDriver;
     private ShopSite shopSite;
-    private String orderDate;
-    private String orderPrice;
     private String orderReference = null;
 
     public OrderHistoryDefs(){
@@ -24,32 +21,30 @@ public class OrderHistoryDefs {
     @Given("^I have placed an order$")
     public void i_have_placed_an_order() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        // input method for order purchase
+        shopSite.placeOrder();
     }
 
     @And("^The order went through correctly$")
     public void the_order_went_through_correctly() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        //input order validating method
+        Assert.assertNotNull(shopSite.getOrderPrice());
     }
 
     @When("^I go to the Order History Page$")
     public void i_go_to_the_Order_History_Page() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         shopSite.shopOrderHistoryPage().goToOrderHistoryPage();
-        Assert.assertEquals(chromeDriver.getCurrentUrl(), shopSite.shopOrderHistoryPage().getPageURL());
+        Assert.assertEquals(shopSite.getCurrentUrl(), shopSite.shopOrderHistoryPage().getPageURL());
     }
 
     @Then("^I see the details of the order I have just placed$")
     public void i_see_the_details_of_the_order_I_have_just_placed() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-
         shopSite.shopOrderHistoryPage().getOrderPrice();
         shopSite.shopOrderHistoryPage().getOrderReference();
-        Assert.assertEquals(orderDate, shopSite.shopOrderHistoryPage().getOrderDate() );
-        Assert.assertEquals(orderPrice, shopSite.shopOrderHistoryPage().getOrderPrice() );
+        Assert.assertNotNull(shopSite.shopOrderHistoryPage().getOrderDate());
+        Assert.assertEquals(shopSite.getOrderPrice(), shopSite.shopOrderHistoryPage().getOrderPrice() );
         orderReference = shopSite.shopOrderHistoryPage().getOrderReference();
-        Assert.assertNotEquals(null, orderReference);
-
+        Assert.assertNotNull(orderReference);
     }
 }

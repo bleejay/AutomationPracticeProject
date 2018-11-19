@@ -9,7 +9,7 @@ public class ShoppingCartPage {
     private WebDriver driver;
 
     //Constructor
-    ShoppingCartPage(WebDriver driver){
+    public ShoppingCartPage(WebDriver driver){
         this.driver = driver;
     }
 
@@ -20,11 +20,12 @@ public class ShoppingCartPage {
     private String signInPageURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
 
     //Buttons
-    private By proceedToCheckoutButton = By.className("button btn btn-default standard-checkout button-medium");
+    private By proceedToCheckoutButton = By.className("standard-checkout");
     private By logoButton = By.className("logo img-responsive");
     private By signInButton = By.className("login");
     private By increaseQuantityOfFirstItemButton = By.id("cart_quantity_up_1_1_0_0");
     private By decreaseQuantityOfFirstItemButton = By.id("cart_quantity_down_1_1_0_0");
+    private By logoutButton = By.className ("logout");
 
     //Item Quantity
     private By firstItemQuantity = By.className("quantity_2_7_0_0");
@@ -57,7 +58,7 @@ public class ShoppingCartPage {
         return Integer.parseInt(driver.findElement(firstItemQuantity).getAttribute("value"));
     }
     public Double getTotalBasketQuantity(){
-        String totalPriceString = driver.findElement (productsTotalPrice).getAttribute ("total_price");
+        String totalPriceString = driver.findElement (productsTotalPrice).getText();
         Double totalPrice = Double.parseDouble(totalPriceString.replace ("$",""));
         return totalPrice;
     }
@@ -82,6 +83,12 @@ public class ShoppingCartPage {
     public void goToSignInPage(){
         driver.navigate().to(signInPageURL);
     }
+    public void goToCartPage(){driver.navigate ().to (cartUrl);}
 
+    //getters
+    public String getCartUrl() {return cartUrl;}
 
+    public By getLogoutButton() {
+        return logoutButton;
+    }
 }

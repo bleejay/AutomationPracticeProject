@@ -15,14 +15,16 @@ public class ShopOrderHistoryPage {
     public void goToOrderHistoryPage(){
         driver.navigate().to(pageURL);
     }
-    public String getOrderPrice(){
-        return driver.findElement(orderHistoryPrice).getAttribute("data-value");
+    public Double getOrderPrice(){
+       String total = driver.findElement(orderHistoryPrice).getAttribute("data-value");
+        Double totalPrice = Double.parseDouble(total.replace ("$",""));
+        return totalPrice;
     }
     public String getOrderReference(){
         return driver.findElement(orderReference).getText();
     }
     public String getOrderDate(){
-        return driver.findElement(orderDate).getAttribute("value");
+        return driver.findElement(orderDate).getText();
     }
     public String getPageURL(){
         return pageURL;
