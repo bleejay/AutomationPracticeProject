@@ -16,11 +16,12 @@ public class SeleniumDriverConfig {
         if (browser.equalsIgnoreCase("chrome")){
             System.setProperty("webdriver.chrome.driver", seleniumProperties.getChromeDriverPath());
             this.driver = new ChromeDriver();
+            driver.manage().timeouts().implicitlyWait(seleniumProperties.getImplicitWaitTime(), TimeUnit.SECONDS);
         } else if (browser.equalsIgnoreCase("firefox")){
             System.setProperty("webdriver.gecko.driver", seleniumProperties.getGeckoDriverPath());
             this.driver = new FirefoxDriver();
+            driver.manage().timeouts().implicitlyWait(seleniumProperties.getImplicitWaitTime(), TimeUnit.SECONDS);
         }
-        this.driver.manage().timeouts().implicitlyWait(seleniumProperties.getImplicitWaitTime(), TimeUnit.SECONDS);
     }
 
     public WebDriver getDriver() {
