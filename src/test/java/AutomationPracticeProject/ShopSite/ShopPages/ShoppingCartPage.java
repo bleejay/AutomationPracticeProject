@@ -58,7 +58,7 @@ public class ShoppingCartPage {
         return Integer.parseInt(driver.findElement(firstItemQuantity).getAttribute("value"));
     }
     public Double getTotalBasketQuantity(){
-        String totalPriceString = driver.findElement (productsTotalPrice).getAttribute ("total_price");
+        String totalPriceString = driver.findElement (productsTotalPrice).getText();
         Double totalPrice = Double.parseDouble(totalPriceString.replace ("$",""));
         return totalPrice;
     }
