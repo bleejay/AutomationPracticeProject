@@ -1,7 +1,6 @@
 package AutomationPracticeProject.ShopSite;
 
-import AutomationPracticeProject.ShopSite.ShopPages.ShopHomePage;
-import AutomationPracticeProject.ShopSite.ShopPages.ShopSignInPage;
+import AutomationPracticeProject.ShopSite.ShopPages.*;
 
 import org.openqa.selenium.WebDriver;
 
@@ -10,7 +9,11 @@ public class ShopSite {
     private WebDriver driver;
     ShopHomePage shopHomePage;
     ShopSignInPage shopSignInPage;
-
+    ShopAddressConfirmationPage shopAddressConfirmationPage;
+    ShopShippingConfirmationPage shopShippingConfirmationPage;
+    ShopPaymentSelectionPage shopPaymentSelectionPage;
+    ShopBankWireTransferConfirmation shopBankWireTransferConfirmation;
+    ShopChequePaymentConfirmationPage shopChequePaymentConfirmationPage;
 
 
     public String getCurrentUrl(){
