@@ -7,13 +7,13 @@ public class ShopHomePage {
 
     private WebDriver driver;
     private String HomePageURL = "http://automationpractice.com/index.php";
-    private By signInLink = By.id("idcta-link");
-    private By addToBasketLink = By.id("");
-    private By quickViewLink = By.id("");
-    private By qvAddToBasketLink = By.id("");
-    private By productPageLink = By.id("");
-    private By categoryLink = By.id("");
-
+    private By signInLink = By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a");
+    private By addToBasketLink = By.xpath("//*[@id=\"homefeatured\"]/li[1]/div/div[2]/div[2]/a[1]/span");
+    private By quickViewLink = By.xpath("//*[@id=\"homefeatured\"]/li[1]/div/div[1]/div/a[2]");
+    private By qvAddToBasketLink = By.xpath("//*[@id=\"add_to_cart\"]/button");
+    private By productPageLink = By.xpath("//*[@id=\"homefeatured\"]/li[1]/div/div[2]/div[2]/a[2]");
+    private By toCheckoutLink = By.xpath("//*[@id=\"button_order_cart\"]/span");
+    private By toCheckoutFromAddLink = By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a/span");
 
 
     public ShopHomePage(WebDriver driver){
@@ -28,19 +28,27 @@ public class ShopHomePage {
         driver.findElement(signInLink).click();
     }
 
-    public void clickAddToBasket(){}
+    public void clickAddToBasket(){
+        driver.findElement(addToBasketLink).click();
+    }
 
-    public void clickQuickView(){}
+    public void clickQuickView(){
+        driver.findElement(quickViewLink).click();
+    }
 
-    public void clickQuickViewAddToCart(){}
+    public void clickQuickViewAddToCart(){
+        driver.findElement(qvAddToBasketLink).click();
+    }
 
-    public void getGoToProduct(){}
+    public void getGoToProduct(){
+        driver.findElement(productPageLink).click();
+    }
 
-    public void goToCategory(){}
+    public void toCheckout(){
+        driver.findElement(toCheckoutLink).click();
+    }
 
-    public void searchBar(){}
-
-
-
-
+    public void toCheckoutFromAdd(){
+        driver.findElement(toCheckoutFromAddLink).click();
+    }
 }
