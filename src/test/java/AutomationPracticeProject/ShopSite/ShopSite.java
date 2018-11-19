@@ -22,10 +22,12 @@ public class ShopSite {
     private Double cartTotal;
     private Double paymentSelectionTotal;
 
+
     public ShopSite(WebDriver driver) {
         this.driver = driver;
         shopHomePage = new ShopHomePage(driver);
         shopSignInPage = new ShopSignInPage(driver);
+        shopMyAccountPage = new ShopMyAccountPage(driver);
         shoppingCartPage = new ShoppingCartPage(driver);
         shopSignInPage = new ShopSignInPage(driver);
         shopAddressConfirmationPage = new ShopAddressConfirmationPage(driver);
@@ -33,7 +35,6 @@ public class ShopSite {
         shopPaymentSelectionPage = new ShopPaymentSelectionPage(driver);
         shopBankWireTransferConfirmation = new ShopBankWireTransferConfirmation(driver);
         shopOrderConfirmationPage = new ShopOrderConfirmationPage(driver);
-
     }
 
     public String getCurrentUrl(){
@@ -55,6 +56,8 @@ public class ShopSite {
     public ShopChequePaymentConfirmationPage shopChequePaymentConfirmationPage() { return shopChequePaymentConfirmationPage; }
     public ShoppingCartPage shoppingCartPage() { return shoppingCartPage; }
     public ShopOrderConfirmationPage shopOrderConfirmationPage() { return shopOrderConfirmationPage; }
+    public ShopMyAccountPage shopMyAccountPage() {return shopMyAccountPage;}
+    public ShopOrderHistoryPage shopOrderHistoryPage(){return new ShopOrderHistoryPage(driver);}
 
     public void placeOrder() {
         shopHomePage.goToHomePage();
@@ -84,5 +87,4 @@ public class ShopSite {
     public Double getPaymentSelectionTotal(){
         return paymentSelectionTotal;
     }
-
 }
