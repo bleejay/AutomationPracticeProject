@@ -25,6 +25,7 @@ public class ShoppingCartPage {
     private By signInButton = By.className("login");
     private By increaseQuantityOfFirstItemButton = By.id("cart_quantity_up_1_1_0_0");
     private By decreaseQuantityOfFirstItemButton = By.id("cart_quantity_down_1_1_0_0");
+    private By logoutButton = By.className ("logout");
 
     //Item Quantity
     private By firstItemQuantity = By.className("quantity_2_7_0_0");
@@ -82,6 +83,12 @@ public class ShoppingCartPage {
     public void goToSignInPage(){
         driver.navigate().to(signInPageURL);
     }
+    public void goToCartPage(){driver.navigate ().to (cartUrl);}
 
+    //getters
+    public String getCartUrl() {return cartUrl;}
 
+    public By getLogoutButton() {
+        return logoutButton;
+    }
 }
