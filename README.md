@@ -17,6 +17,8 @@ The steps are as follows:
 
 ## How to use
 
+In CukesJunit runner, change the path to the features folder.
+
 ## Authors
 Daniel Blake, Jason Blee, Sam Grill, Oliver Hall, John Shipman, Boris Zekic
 
