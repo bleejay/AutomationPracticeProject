@@ -16,8 +16,21 @@ The steps are as follows:
 4. Repeat this step in the AppTest class.
 
 ## How to use
+1. See the CukesJunitRunner class, change the path of 'features' to the full path of features package on your personal machine.
+2. When creating scenarios the user should create a new features file or add to an existing features file in the features directory
+2. The glue should remain as the directory name of the parent directory of the step defintions .
+3. The user should input the tag names of the tests they wish to run. There are also existing scenarios for the user to run.
 
-In CukesJunit runner, change the path to the features folder.
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        format = {"pretty","html:src/reports"},
+        features = {""},
+        glue = {"Step_Defs"},
+        tags = {""}
+)
+public class CukesJunitRunner {
+}
+
 
 ## Authors
 Daniel Blake, Jason Blee, Sam Grill, Oliver Hall, John Shipman, Boris Zekic
