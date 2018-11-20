@@ -2,7 +2,7 @@ Feature: After I have placed an order
   the details of the order are listed
   in my order history page
 
-  @OrderHistoryTest
+  @MainUserStory
   Scenario: After I have ordered an item, I want to check it is in my Order History
     Given I have placed an order
     And The order went through correctly

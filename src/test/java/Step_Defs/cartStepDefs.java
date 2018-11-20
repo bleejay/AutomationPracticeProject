@@ -4,6 +4,7 @@ import AutomationPracticeProject.Selenium_Config.SeleniumDriverConfig;
 import AutomationPracticeProject.ShopSite.ShopPages.ShoppingCartPage;
 import AutomationPracticeProject.ShopSite.ShopSite;
 import cucumber.api.PendingException;
+import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -51,6 +52,10 @@ public class cartStepDefs {
     @Then("^I go to the address confirmation page$")
     public void i_go_to_the_Address_confirmation_page() throws Throwable {
         Assert.assertEquals (shopSite.shopAddressConfirmationPage ().getPageURL (), shopSite.getCurrentUrl ());
+    }
+    @After
+    public void shutDown(){
+        shopSite.quit();
     }
 
 }

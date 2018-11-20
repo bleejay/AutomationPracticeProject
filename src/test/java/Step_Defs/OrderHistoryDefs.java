@@ -2,6 +2,7 @@ package Step_Defs;
 import AutomationPracticeProject.Selenium_Config.SeleniumDriverConfig;
 import AutomationPracticeProject.ShopSite.ShopSite;
 import cucumber.api.PendingException;
+import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -46,5 +47,9 @@ public class OrderHistoryDefs {
         Assert.assertEquals(shopSite.getOrderPrice(), shopSite.shopOrderHistoryPage().getOrderPrice() );
         orderReference = shopSite.shopOrderHistoryPage().getOrderReference();
         Assert.assertNotNull(orderReference);
+    }
+    @After
+    public void shutDown(){
+        shopSite.quit();
     }
 }

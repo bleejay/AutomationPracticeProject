@@ -12,8 +12,12 @@ The steps are as follows:
 1. Install drivers for any browser you require. E.g. Chromedriver which can be found on http://chromedriver.chromium.org/downloads.
 2. Open this product in your chosen IDE and access the selenium_driver.properties file found in the Selenium_Config
     package. Adjust the path values for your driver to the local path for the driver. 
-3. In the SeleniumProperties class adjust this to your filepath for the selenium_driver.properties file.
-4. Repeat this step in the AppTest class.
+3. Create a selenium.properties file in the selenium_config package with a structure like this:
+    chrome_driver_path=PATH
+    edge_driver_path=PATH
+    gecko_driver_path=PATH
+    implicit_wait_time=10
+4. In the SeleniumProperties class adjust this to your filepath for the selenium_driver.properties file you have created.
 
 ## How to use
 1. See the CukesJunitRunner class, change the path of 'features' to the full path of features package on your personal machine.

@@ -2,6 +2,7 @@ package Step_Defs;
 
 import AutomationPracticeProject.Selenium_Config.SeleniumDriverConfig;
 import AutomationPracticeProject.ShopSite.ShopSite;
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -69,5 +70,9 @@ public class HomepageStepDefs {
     @Then("^I am taken to the Checkout$")
     public void i_am_taken_to_the_Checkout() throws Throwable {
         Assert.assertEquals("http://automationpractice.com/index.php?controller=order", shopSite.getCurrentUrl());
+    }
+    @After
+    public void shutDown(){
+        shopSite.quit();
     }
 }

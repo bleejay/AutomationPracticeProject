@@ -2,6 +2,7 @@ package Step_Defs;
 import AutomationPracticeProject.Selenium_Config.SeleniumDriverConfig;
 import AutomationPracticeProject.ShopSite.ShopSite;
 import cucumber.api.PendingException;
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -34,5 +35,8 @@ public class TotalStepDefs {
         Assert.assertEquals(shopSite.getOrderPrice(), shopSite.getPaymentSelectionTotal());
 //        Assert.assertEquals(shopSite.getOrderPrice(), shopSite.getHomePageTotal());
     }
-
+    @After
+    public void shutDown(){
+        shopSite.quit();
+    }
 }

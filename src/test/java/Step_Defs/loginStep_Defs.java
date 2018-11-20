@@ -4,6 +4,7 @@ import AutomationPracticeProject.*;
 import AutomationPracticeProject.Selenium_Config.SeleniumDriverConfig;
 import AutomationPracticeProject.ShopSite.ShopSite;
 import cucumber.api.PendingException;
+import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -67,6 +68,10 @@ public class loginStep_Defs {
     @Then("^I am taken to the correct page$")
     public void iAmTakenToTheCorrectPage() throws Throwable {
         Assert.assertEquals(shopSite.shopSignInPage().getLoggedInUrl(),shopSite.getCurrentUrl());
+        shopSite.quit();
+    }
+    @After
+    public void shutDown(){
         shopSite.quit();
     }
 }
