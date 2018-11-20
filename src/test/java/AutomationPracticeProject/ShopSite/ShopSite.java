@@ -18,9 +18,12 @@ public class ShopSite {
     ShopChequePaymentConfirmationPage shopChequePaymentConfirmationPage;
     ShoppingCartPage shoppingCartPage;
     ShopOrderConfirmationPage shopOrderConfirmationPage;
+    ShopMyAccountPage shopMyAccountPage;
+
     private Double orderPrice;
     private Double cartTotal;
     private Double paymentSelectionTotal;
+    private Double homePageTotal;
 
 
     public ShopSite(WebDriver driver) {
@@ -35,6 +38,7 @@ public class ShopSite {
         shopPaymentSelectionPage = new ShopPaymentSelectionPage(driver);
         shopBankWireTransferConfirmation = new ShopBankWireTransferConfirmation(driver);
         shopOrderConfirmationPage = new ShopOrderConfirmationPage(driver);
+        shopOrderHistoryPage = new ShopOrderHistoryPage(driver);
     }
 
     public String getCurrentUrl(){
@@ -48,7 +52,6 @@ public class ShopSite {
     // Page Accessors
     public ShopHomePage shopHomePage() { return shopHomePage; }
     public ShopSignInPage shopSignInPage() { return shopSignInPage; }
-    public ShopOrderHistoryPage shopOrderHistoryPage() { return shopOrderHistoryPage; }
     public ShopAddressConfirmationPage shopAddressConfirmationPage() { return shopAddressConfirmationPage; }
     public ShopShippingConfirmationPage shopShippingConfirmationPage() { return shopShippingConfirmationPage; }
     public ShopPaymentSelectionPage shopPaymentSelectionPage() { return shopPaymentSelectionPage; }
@@ -56,12 +59,13 @@ public class ShopSite {
     public ShopChequePaymentConfirmationPage shopChequePaymentConfirmationPage() { return shopChequePaymentConfirmationPage; }
     public ShoppingCartPage shoppingCartPage() { return shoppingCartPage; }
     public ShopOrderConfirmationPage shopOrderConfirmationPage() { return shopOrderConfirmationPage; }
-    public ShopMyAccountPage shopMyAccountPage() {return shopMyAccountPage;}
-    public ShopOrderHistoryPage shopOrderHistoryPage(){return new ShopOrderHistoryPage(driver);}
+    public ShopMyAccountPage shopMyAccountPage() {return shopMyAccountPage();}
+    public ShopOrderHistoryPage shopOrderHistoryPage(){return shopOrderHistoryPage();}
 
     public void placeOrder() {
         shopHomePage.goToHomePage();
         shopHomePage.clickAddToBasket();
+//        homePageTotal = shopHomePage.getCartPrice();
         shopHomePage.toCheckoutFromAdd();
         cartTotal = shoppingCartPage.getTotalBasketQuantity();
         shoppingCartPage.clickProceedToCheckoutButton();
@@ -86,5 +90,8 @@ public class ShopSite {
     }
     public Double getPaymentSelectionTotal(){
         return paymentSelectionTotal;
+    }
+    public Double getHomePageTotal(){
+        return homePageTotal;
     }
 }

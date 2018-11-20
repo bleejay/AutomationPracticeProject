@@ -24,7 +24,7 @@ public class MyAccountStepDefs {
 
     @Given("^I am on the My Account Page$")
     public void i_am_on_the_My_Account_Page() throws Throwable {
-        shopSite.shopMyAccountPage().goTomyAccountPage();
+        shopSite.shopMyAccountPage().goToMyAccountPage();
     }
 
     @And("^That I am successfully signed in$")
